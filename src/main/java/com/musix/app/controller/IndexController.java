@@ -10,14 +10,14 @@ public class IndexController {
 
     @RequestMapping("/")
     public String home(Map<String, Object> model) {
-        model.put("message", "HowToDoInJava Reader !!");
+        model.put("message", "root");
         return "index";
     }
 
-    @RequestMapping("/next")
+    @RequestMapping("/play")
     public String next(Map<String, Object> model) {
-        model.put("message", "You are in new page !!");
-        return "next";
+        model.put("message", "PLAY PAGE");
+        return "play";
     }
 
 }
