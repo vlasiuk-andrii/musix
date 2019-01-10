@@ -4,8 +4,13 @@
 
 <head>
 <script type="text/javascript">
+    var id;
+
     function loadAudio(){
-        document.getElementById("media").src="/audio";
+
+            document.getElementById("song1").src="/audio?id=1";
+            document.getElementById("song2").src="/audio?id=2";
+
     }
 </script>
 </head>
@@ -22,7 +27,11 @@
         <br>
         <br>
 
-        <audio id="media" src="" controls="true" />
+        <audio id="song1" src="" controls="true" >
+        </audio>
+        <br>
+        <audio id="song2" src="" controls="true" />
+        </audio>
 
         </div>
     </div>
