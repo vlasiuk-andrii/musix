@@ -32,16 +32,8 @@ public class IndexController {
             method = RequestMethod.GET)
     public void getAudio(@RequestParam("id") String id,
                          HttpServletResponse response){
-
-        System.out.println("--playFile");
-        File file;
-        String classPath = "C:\\Users\\Andrii_Vlasiuk\\Documents\\Andrii Vlasiuk\\musix\\src\\main\\resources\\mp3\\";
-
-        if (id.equals("1")) {
-            file  = new File(classPath + "viber_message.mp3");
-        } else if (id.equals("2")) {
-            file  = new File(classPath + "supermarket.mp3");
-        } else file = new File("");
+        String classPath = System.getProperty("user.dir");
+        File file  = new File(classPath + "\\src\\main\\resources\\mp3\\" + id + ".mp3");
         FileInputStream fis;
         byte[] buffer=null;
         try {
@@ -50,10 +42,8 @@ public class IndexController {
             fis.read(buffer);
             fis.close();
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
